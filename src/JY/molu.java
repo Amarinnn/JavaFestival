@@ -2,21 +2,25 @@ import java.util.Scanner;
 
 public class molu {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("숫자입력>>");
-		int input = sc.nextInt();
-		
-		String answer = Integer.toBinaryString(input);
-		//int로 받은 input을 이진수로 변환해 string answer로 저장
-		char[] tmp = new char[answer.length()];
-		//배열 tmp는 answer의 길이
-		for (int i = 0; i < answer.length(); i++) {
-			tmp[i] = answer.charAt(i);
-		}
-		for(char s : tmp) {
-			System.out.print(s + " ");
-		}
-		
+		String[] subject = { "java", "web ", "and"};
+
+        int[] score = new int[3];
+
+        int sum = 0;
+        int avg = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < score.length; i++) {
+            System.out.print(subject[i] +"점수: ");
+            score[i] = sc.nextInt();
+            sum += score[i];
+        }
+        for(int i = 0; i<subject.length; i++) {
+            System.out.println(subject[i] +":"+ score[i]);
+        }
+        System.out.println("sum: " + sum);
+        System.out.println("avg: " + sum / score.length);
 		
 	}
 }
